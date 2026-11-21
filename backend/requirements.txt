@@ -2,3 +2,16 @@ fastapi
 uvicorn[standard]
 opencv-python
 python-multipart
+# RAG and Document Processing
+pymupdf
+python-docx
+langchain-text-splitters
+
+# Vector Database
+chromadb
+
+# Local LLM Integration
+ollama
+
+pytesseract
+Pillow

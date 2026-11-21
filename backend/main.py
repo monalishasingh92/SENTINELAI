@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
+from backend.rag.upload import router as document_upload_router
+from backend.rag.chat import router as chat_router
 
 # Initialize SENTINELAI application
 app = FastAPI(
@@ -8,6 +10,12 @@ app = FastAPI(
     description="AI-Powered Real-Time Edge Surveillance and Safety Monitoring System",
     version="1.0.0"
 )
+
+
+# Register RAG APIs
+
+app.include_router(document_upload_router)
+app.include_router(chat_router)
 
 # React frontend connection
 app.add_middleware(
